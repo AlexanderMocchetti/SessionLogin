@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$database = "signup_php";
+$database = "signin_php";
 $port = 3306;
 
 $conn = new mysqli($hostname, $username, $password, $database, $port);

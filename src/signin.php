@@ -12,9 +12,9 @@ function fetch_user(mysqli $conn, int $id) : array {
 
 function login_user (mysqli $conn, string $email, string $password) : string{
     if (!check_if_user_present($conn, $email))
-        return "User not existent, please register";
+        return "User not existent, please <a href='signup.php'>register</a>";
     $hash = md5($password);
-    $sql = "SELECT id FROM user WHERE email = '$email' and password_hash = '$hash'";
+    $sql = "SELECT id FROM users WHERE email = '$email' and password_hash = '$hash'";
     $result = $conn->query($sql);
     if ($result->num_rows === 0)
         return "Incorrect email or password";
